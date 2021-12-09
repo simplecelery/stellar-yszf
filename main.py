@@ -10,6 +10,7 @@ import json
 import urllib3
 import os
 import sys
+from shutil import copyfile
 from datetime import datetime
 import sqlite3
 
