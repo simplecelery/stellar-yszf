@@ -46,9 +46,9 @@ class yszfplugin(StellarPlayer.IStellarPlayerPlugin):
     def start(self):
         super().start()
         self.initdb()
-        jsonpath = self.player.dataDirectory + '\\cartoon_source.json'
+        jsonpath = self.player.dataDirectory + os.path.sep + 'cartoon_source.json'
         if os.path.exists(jsonpath) == False:
-            localpath = os.path.split(os.path.realpath(__file__))[0] + '\\cartoon_source.json'
+            localpath = os.path.split(os.path.realpath(__file__))[0] + os.path.sep + 'cartoon_source.json'
             print(localpath)
             if os.path.exists(localpath):
                 try:
@@ -151,7 +151,7 @@ class yszfplugin(StellarPlayer.IStellarPlayerPlugin):
         cur.close()
 
     def loadSelected(self):
-        jsonpath = self.player.dataDirectory + '\\userselect.json'
+        jsonpath = self.player.dataDirectory + os.path.sep + 'userselect.json'
         print(jsonpath)
         if os.path.exists(jsonpath) == False:
             return
